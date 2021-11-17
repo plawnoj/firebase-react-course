@@ -1,3 +1,4 @@
+//importing auth and googleAuthProvider from the firebase hook
 import { auth, googleAuthProvider } from '../lib/firebase';
 
 export default function Enter(props){

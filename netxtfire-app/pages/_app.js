@@ -5,9 +5,10 @@ import { Toaster } from 'react-hot-toast';
 function MyApp({ Component, pageProps }) {
   return (
     <>
+    <div><Toaster /></div> 
     <Navbar />
     <Component {...pageProps} />
-    <div><Toaster /></div>
+    
     </>
   )
 }

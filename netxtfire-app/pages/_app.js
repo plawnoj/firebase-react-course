@@ -5,7 +5,12 @@ import { Toaster } from 'react-hot-toast';
 function MyApp({ Component, pageProps }) {
   return (
     <>
-    <div><Toaster /></div> 
+    <div>
+      <Toaster 
+        position="bottom-left"
+        reverseOrder={false}
+      />
+    </div> 
     <Navbar />
     <Component {...pageProps} />
     

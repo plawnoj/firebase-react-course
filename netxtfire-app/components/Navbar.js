@@ -17,14 +17,16 @@ export default function Navbar(){
         <nav className="navbar">
             <ul>
                 <li>
+                    {/* redirects to home page with feed */}
                     <Link href="/">
-                        <button className="btn-logo">feed</button>
+                        <button className="btn-logo">feed</button> 
                     </Link>
                 </li>
 
                 {/* user is signed in and has username */}
                 {username && (
-                    <>  
+                    <>
+                      {/* this is the navbar that will be seen when the auth state is true */}
                         <li className="push-left">
                             <Link href="/admin">
                                 <button className="btn-blue">Write Posts</button>
@@ -42,6 +44,8 @@ export default function Navbar(){
                 {/* user is not signed in or has not created username */}
                 {!username && (
                     <li>
+                        {/* navbar that is shown when user auth state is false */}
+                        {/* leads to the /enter page with the sign in with google prompt  */}
                         <Link href="/enter">
                             <button className="btn-blue">login</button>
                         </Link>

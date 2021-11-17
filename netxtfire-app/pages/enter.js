@@ -45,5 +45,6 @@ function SignOutButton(){
 
 //Username form
 function UsernameForm(){
-
+    // needed filler for now as it was angry at me for not returning anything out of this 
+    return <h1>owo</h1> 
 }

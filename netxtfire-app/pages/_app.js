@@ -3,13 +3,14 @@ import Navbar from '../components/Navbar';
 import { Toaster } from 'react-hot-toast';
 import { UserContext } from '../lib/context'; //this threw a fit for a weird reason
 
-//starting auth hook
-
+import { useUserData } from '../lib/hooks'; //simplified app.js by moving auth hook to hooks.js
 
 function MyApp({ Component, pageProps }) {
+  const userData = useUserData();
+
   return (
     
-    <UserContext.Provider value={{ user:{}, username: 'jeff'}}>
+    <UserContext.Provider value={userData}>
       <Navbar />
       <Component {...pageProps} />
       <Toaster 

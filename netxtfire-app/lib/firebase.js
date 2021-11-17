@@ -20,5 +20,6 @@ if (!firebase.apps.length){
 }
 //exporting the variables to be used globally across the project
 export const auth = firebase.auth();
+export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 export const firestore = firebase.firestore();
 export const storage = firebase.storage();

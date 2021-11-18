@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
       <Navbar />
       <Component {...pageProps} />
       <Toaster 
-        position="bottom-left"
+        position="bottom-right"
         reverseOrder={false}
       />
     </UserContext.Provider>

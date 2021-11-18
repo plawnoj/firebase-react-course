@@ -14,17 +14,17 @@ export default function Enter(props){
     //3. user signed in, has username <SignOutButton />
     return (
         <main>
-            /* 
-            * come back to this and learn the syntax, but this is basically saying
-            * depending on the current auth state of the window and userContext 
-            * show them the following screen
-            */
+             
+             {/* come back to this and learn the syntax, but this is basically saying
+             depending on the current auth state of the window and userContext 
+             show them the following screen */}
+            
             {user ? !username ? <UsernameForm /> : <SignOutButton /> : <SignInButton />} 
         </main>
     );
 }
 
-//!Sign in with google button
+//*Sign in with google button
 function SignInButton(){
     const signInWithGoogle = async () => {
         try { //not sure if this try catch block will work, we'll see in production
@@ -43,12 +43,12 @@ function SignInButton(){
 
 }
 
-//!Sign out button
+//*Sign out button
 function SignOutButton(){
     return <button onClick={() => auth.signOut()}>Sign Out</button>
 }
 
-//!Username form
+//*Username form
 //this is going to turn into a chunky bit of code, make sure to go through and understand whats happening
 function UsernameForm(){
     //this syntax confuses me
@@ -93,7 +93,7 @@ function UsernameForm(){
     const onChange = (e) => { 
         //Force form value typed in form to match correct format
         const val = e.target.value.toLowerCase();
-        const re = /^(?=[a-zA-Z0-9._]{3,15}$)(?!.*[_.]{2})[^_.].*[^_.]$/;        
+        const re = /^(?=[a-zA-Z0-9._]{3,15}$)(?!.*[_.]{2})[^_.].*[^_.]$/; //regex ew fucking disgusting -_-       
 
         if (val.length < 3){
             setFormValue(val);

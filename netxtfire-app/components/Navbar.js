@@ -30,6 +30,9 @@ export default function Navbar(){
                   <button className="btn-blue">Write Posts</button>
                 </Link>
               </li>
+              <li>  
+               <SignOutButton /> 
+              </li>
               <li>
                 <Link href={`/${username}`}>
                   <img src={user?.photoURL} />
@@ -49,4 +52,8 @@ export default function Navbar(){
         </ul>
       </nav>
     );
+}
+
+function SignOutButton(){
+  return <button onClick={() => auth.signOut()}>Sign Out</button>
 }

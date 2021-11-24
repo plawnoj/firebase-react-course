@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import { useContext } from 'react';
 import { UserContext } from '../lib/context';
+//not sure why this was causing so many issues, but had to import the auth tool from firebase.js file
+//here in order to utilize the SignOutButton auth.signOut() function
+import { auth } from '../lib/firebase';
 
 //top navbar
 export default function Navbar(){

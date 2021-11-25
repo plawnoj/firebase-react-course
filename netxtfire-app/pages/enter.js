@@ -126,7 +126,7 @@ function UsernameForm(){
                 setLoading(false); //update loading state
             }
         }, 500), //500ms wait time for user to stop typing before querying firestore - debounce allows this
-        [] //redirect for callback maybe?
+        []
     );
 
     return (

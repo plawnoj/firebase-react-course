@@ -5,9 +5,9 @@ export default function UserProfile({ user }){
         <div className="box-center">
             <img src={user.photoURL || '/hacker.jpg'} className="card-img-center" />
             <p>
-                <i>@{user.username}</i> //print the @ of the user 
+                <i>@{user.username}</i> 
             </p>
-            <h1>{user.displayName || 'Anonymous User'}</h1> //depending on user auth state im assuming 
+            <h1>{user.displayName || 'Anonymous User'}</h1> 
         </div>
     );
 }

@@ -19,6 +19,7 @@ if (!firebase.apps.length){
     firebase.initializeApp(firebaseConfig);
 }
 //exporting the variables to be used globally across the project
+//!All Firebase related global tools 
 export const auth = firebase.auth();
 export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 export const firestore = firebase.firestore();

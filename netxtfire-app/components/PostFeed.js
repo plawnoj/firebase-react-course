@@ -1,6 +1,11 @@
 import Link from 'next/link';
 
 export default function PostFeed({ posts, admin }){
+    //returning the actual feed of posts
+    //how the feed of posts actually converts to html and how it appears to end user 
+    //exports them to the DOM as PostItem with the tags of: post(post id), key(url to get to post)
+    //and the admin tag of whether or not the user logged in is the owner of that post 
+    //if admin is true, end user will be able to edit the post 
     return posts ? posts.map((post) => <PostItem post={post} key={post.slug} admin={admin} />) : null;
 }
 

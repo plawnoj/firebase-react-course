@@ -14,8 +14,7 @@ export default function Enter(props){
     //3. user signed in, has username <SignOutButton />
     return (
         <main>
-             
-             {/* come back to this and learn the syntax, but this is basically saying
+              {/* come back to this and learn the syntax, but this is basically saying
              depending on the current auth state of the window and userContext 
              show them the following screen */}
             
@@ -85,10 +84,10 @@ function UsernameForm(){
     };
 
     /*
-    * the state of the username field is asynchronusly being passed thorugh to the on change
+    * the state of the username field is asynchronously being passed through to the on change
     * function via the onChange={onChange} tag on the input field for username
-    * the declaration onChange = (e) => is what allows this to happen asynchronusly
-    * onChange is what manages the state of the form asyncronusly 
+    * the declaration onChange = (e) => is what allows this to happen asynchronously
+    * onChange is what manages the state of the form asynchronously 
     */
     const onChange = (e) => { 
         //Force form value typed in form to match correct format
@@ -122,7 +121,7 @@ function UsernameForm(){
                 const ref = firestore.doc(`usernames/${username}`); //pointer for username document in firestore
                 const { exists } = await ref.get(); //exists is a promise attached to grabbing the username data from firestore
                 console.log('firestore read executed uwu'); //console log to show interaction with firestore
-                setIsValid(!exists); //will be a valid username if it does not exist
+                setIsValid(!exists); //wi   ll be a valid username if it does not exist
                 setLoading(false); //update loading state
             }
         }, 500), //500ms wait time for user to stop typing before querying firestore - debounce allows this

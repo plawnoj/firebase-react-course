@@ -18,14 +18,17 @@ import { useState } from 'react';
 const LIMIT = 1; 
 
 export async function getServerSideProps(context){
+  //*this is the actual query that is being rendered server side, its a collectionGroup query and 
+  //*i created the composite index for posts collectionGroup, however the data that is being returned is coming
+  //*back null only on the feed page > posts load correctly on userProfiles which is confusing 
   const postsQuery = firestore
     .collectionGroup('posts')
-    .where('publishedAt', '==', true)
+    .where('published', '==', true)
     .orderBy('createdAt', 'desc')
     .limit(LIMIT);
 
   const posts = (await postsQuery.get()).docs.map(postToJSON);
-
+  console.log(posts);
   return {
     props: { posts }, // will be passed to the page component as props
   };
@@ -52,8 +55,10 @@ export default function Home(props) {
       .collectionGroup('posts')
       .where('published', '==', true)
       .orderBy('createdAt', 'desc')
+      .startAfter(cursor)
       .limit(LIMIT);
     
+    // const newPosts = (await query.get()).docs.map(postToJSON);
     const newPosts = (await query.get()).docs.map((doc) => doc.data());
     setPosts(posts.concat(newPosts));
 

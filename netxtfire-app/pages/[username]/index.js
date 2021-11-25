@@ -29,7 +29,7 @@ export async function getServerSideProps({ query }){
   }
 
   return {
-    props: { user, posts}, //will be passed to the page component as props 
+    props: { user, posts }, //will be passed to the page component as props 
   };
 }
 
@@ -37,7 +37,6 @@ export async function getServerSideProps({ query }){
 export default function UserProfilePage({ user, posts }) {
   return (
     <main>
-      
         <UserProfile user={user} />
         <PostFeed posts={posts} />
     </main>

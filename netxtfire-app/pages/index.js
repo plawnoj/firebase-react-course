@@ -39,7 +39,7 @@ export async function getServerSideProps(context){
 //this is going to be turned into the feed page that for the first 10 items of the feed will be rendered server side
 //any extra posts the end user wants will have a request put in and automatically added to their feed 
 export default function Home(props) {
-  const [posts, setPosts] = useState(props.post); //state for posts
+  const [posts, setPosts] = useState(props.posts); //state for posts
   const [loading, setLoading] = useState(false); //state for loading
 
   const [postsEnd, setPostsEnd] = useState(false); //state for post end
@@ -58,8 +58,10 @@ export default function Home(props) {
       .startAfter(cursor)
       .limit(LIMIT);
     
+    
     // const newPosts = (await query.get()).docs.map(postToJSON);
     const newPosts = (await query.get()).docs.map((doc) => doc.data());
+    console.log(newPosts);
     setPosts(posts.concat(newPosts));
 
     setLoading(false);

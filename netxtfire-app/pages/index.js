@@ -59,7 +59,6 @@ export default function Home(props) {
       .limit(LIMIT);
     
     
-    // const newPosts = (await query.get()).docs.map(postToJSON);
     const newPosts = (await query.get()).docs.map((doc) => doc.data());
     console.log(newPosts);
     setPosts(posts.concat(newPosts));
@@ -76,12 +75,11 @@ export default function Home(props) {
   return (
     <main>
       <PostFeed posts={posts} />
-
       {!loading && !postsEnd && <button onClick={getMorePosts}>load more</button>}
 
       <Loader show={loading} />
 
-      {postsEnd && 'you have reached the end of the feed owo'}
+      {postsEnd && 'end of feed owo'}
 
     </main>
   );

@@ -63,9 +63,8 @@ export default function Post(props) {
 
   return (
     <main className="{styles.container}">
-
-
-
+      {/* hands all of the ui rendering over to the PostContent Component */}
+      <PostContent post={props.post} /> 
     </main>
   );
 }

@@ -81,7 +81,7 @@ export default function Home(props) {
 
       <Loader show={loading} />
 
-      {postsEnd && 'you have reached the end of the feed'}
+      {postsEnd && 'you have reached the end of the feed owo'}
 
     </main>
   );
